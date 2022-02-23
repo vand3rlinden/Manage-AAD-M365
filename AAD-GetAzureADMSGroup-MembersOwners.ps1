@@ -1,5 +1,5 @@
 <#
-This script will help you to obtain all Azure AD Groups in the tenant and export this into a CSV file. In my scenario I was need to obtain the following
+This tricks will help you to obtain all Azure AD Groups in the tenant and export this into a CSV file. In my scenario I was need to obtain the following:
 - All dynamic Azure AAD groups with their MembershipRule
 - Get all Azure AD GroupMembers
 - Get all M365 GroupOwners
