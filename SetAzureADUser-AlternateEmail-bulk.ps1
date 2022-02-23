@@ -1,5 +1,5 @@
 <#
-In the need to add alternateEmailAddress in bulk in Azure AD? This script will help you out!
+In the need to add alternateEmailAddress in bulk in Azure AD? This easy script will help you out!
 
 CSV format:
 userPrincipalName,alternateEmailAddress
