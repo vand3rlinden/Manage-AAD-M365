@@ -1,4 +1,4 @@
-#>
+<#
 In the need to add alternateEmailAddress in bulk in Azure AD? This script will help you out!
 
 
