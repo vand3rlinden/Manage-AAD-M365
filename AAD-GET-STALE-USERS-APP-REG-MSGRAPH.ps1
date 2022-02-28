@@ -1,7 +1,7 @@
 <#
 1: Make an App Registration in Azure AD
 2: API permissions -> Add a permission -> Microsoft Graph -> Application permissions
-3: User.Read.All, Directory.Read.All, Auditlogs.Read.All
+3: Set the following permissions: User.Read.All, Directory.Read.All, Auditlogs.Read.All
 4: Certificates & secrets -> New client setcret
 5: Note the Value of the secret and App ID
 #>
