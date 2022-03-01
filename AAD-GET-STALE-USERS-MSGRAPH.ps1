@@ -4,6 +4,7 @@
 #>
 
 Connect-MgGraph -Scopes 'AuditLog.Read.All','Directory.Read.All'
+Select-MgProfile beta
 $Result=@()
 $Users = Get-MgUser -All | Select-Object UserPrincipalName,ID,DisplayName
 foreach($User in $Users)
