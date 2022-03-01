@@ -1,6 +1,6 @@
 <#
 1: First install Graph with: Install-Module Microsoft.Graph -Scope AllUsers
-2: First time run, you will need to give consent on the Graph PowerShell enterprise application in AAD and on the scope permissions below.
+2: First time run, you will need to give consent on the Microsoft Graph PowerShell enterprise application in AAD and on the scope permissions below.
 #>
 
 Connect-MgGraph -Scopes 'AuditLog.Read.All','Directory.Read.All'
