@@ -5,7 +5,7 @@ Users
 Firstname Lastname;user1@domain.com
 Firstname Lastname;user2@domain.com
 
-ForEach will not work an is not needed, because the users needs to be set in 1 row. The input is emailaddress based, for internal or external addresses.
+ForEach will not work and is not needed, because the users needs to be set in 1 row. The input is emailaddress based, for internal or external addresses.
 
 #>
 
