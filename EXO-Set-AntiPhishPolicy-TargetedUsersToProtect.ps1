@@ -1,16 +1,32 @@
-<# Bulk adding: senders for impersonation protection
+# Bulk adding: senders for impersonation protection
 
-Add in bulk CSV like:
+<##### Option 1:
+CSV Like;
 Users
 Firstname Lastname;user1@domain.com
 Firstname Lastname;user2@domain.com
 
-ForEach will not work and is not needed, because the users needs to be set in 1 row. The input is emailaddress based, for internal or external addresses.
-
+ForEach is not needed for this option, because we OVERWRITTING the whole value
 #>
-
-#Obtain the addresses in the CSV
 $Users = (Import-CSV -Path 'C:\temp\users.csv').Users
-
-#Set the senders for impersonation protection in the AntiPhishPolicy
 Set-AntiPhishPolicy -Identity "Office365 AntiPhish Default" -TargetedUsersToProtect $Users
+
+<##### Option 2:
+CSV Like;
+Policy,Users
+Office365 AntiPhish Default,Firstname Lastname;user1@domain.com
+Office365 AntiPhish Default,Firstname Lastname;user2@domain.com
+
+We use ForEach to add the value on each iteration.
+#>
+$Users = Import-CSV -Path 'C:\temp\users.csv'
+
+ForEach ($User in $Users){
+    Try {
+        Set-AntiPhishPolicy -Identity $User.Policy -TargetedUsersToProtect @{add=$User.Users}
+        Write-Host -ForegroundColor Green $user.Users "User is added!"
+    }
+    Catch {
+        Write-Error "Something threw an exception '$($user.Users)'.`nError: $($_.Exception.Message)"
+    }
+}
