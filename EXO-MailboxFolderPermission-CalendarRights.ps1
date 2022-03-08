@@ -20,8 +20,8 @@ Set-MailboxFolderPermission -Identity ayla@contoso.com:\Calendar -User Default -
 #Add Delegate on Calender !!The parameter "SharingPermissionFlags" can be specified only when access rights is Editor.!!
 Set-MailboxFolderPermission -Identity ayla@contoso.com:\Calendar -User ed@contoso.com -AccessRights Editor -SharingPermissionFlags Delegate
 
-#Delete delegate permissions
-Set-MailboxFolderPermission -Identity ayla@contoso.com:\Calendar -User kim@contoso.com -AccessRights Editor -SharingPermissionFlags none
+#Delete delegate: This example changes an existing user's permissions to Editor and removes their current delegate status.
+Set-MailboxFolderPermission -Identity ayla@contoso.com:\Calendar -User ed@contoso.com -AccessRights Editor -SendNotificationToUser $false
 
 #Add Delegate on Calender + CanViewPrivateItems
 Set-MailboxFolderPermission -Identity ayla@contoso.com:\Calendar -User ed@contoso.com -AccessRights Editor -SharingPermissionFlags Delegate,CanViewPrivateItems
