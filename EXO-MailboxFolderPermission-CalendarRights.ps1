@@ -22,6 +22,8 @@ Set-MailboxFolderPermission -Identity ayla@contoso.com:\Calendar -User ed@contos
 
 #Delete delegate: This example changes an existing user's permissions to Editor and removes their current delegate status.
 Set-MailboxFolderPermission -Identity ayla@contoso.com:\Calendar -User ed@contoso.com -AccessRights Editor -SendNotificationToUser $false
+#There is no way to remove an Outlook delegate user by using powershell command. The best way to remove is to open the Outlook profile and remove it in Outlook.
+#Go to File > Account Settings > Delegate Access -> Remove User -> Re add editor permissions via PowerShell
 
 #Add Delegate on Calender + CanViewPrivateItems
 Set-MailboxFolderPermission -Identity ayla@contoso.com:\Calendar -User ed@contoso.com -AccessRights Editor -SharingPermissionFlags Delegate,CanViewPrivateItems
