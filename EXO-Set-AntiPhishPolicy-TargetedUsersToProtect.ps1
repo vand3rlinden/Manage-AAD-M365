@@ -6,7 +6,7 @@ Users
 Firstname Lastname;user1@domain.com
 Firstname Lastname;user2@domain.com
 
-ForEach is not needed for this option, because we OVERWRITTING the whole value
+ForEach is not needed for this option, because we OVERWRITE the whole value
 #>
 $Users = (Import-CSV -Path 'C:\temp\users.csv').Users
 Set-AntiPhishPolicy -Identity "Office365 AntiPhish Default" -TargetedUsersToProtect $Users
