@@ -8,7 +8,7 @@
 
 #App Registration and Azure AD information
 $clientID     = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"    #  <-insert your own app ID here
-$clientSecret = Get-Content -Path 'C:\temp\APISecret.txt' #  <-insert your own secret here
+$clientSecret = Get-Content -Path 'C:\temp\APISecret.txt' #  <-insert your own secret here, or import from a KeyVault.
 $tenantDomain = "xxxxxx.onmicrosoft.com"                  #  <-insert your onmicrosoft.com domain here
  
 #Access token:
