@@ -23,7 +23,7 @@ $Users = Import-CSV -Path 'C:\temp\users.csv'
 
 ForEach ($User in $Users){
     Try {
-        Set-AntiPhishPolicy -Identity $User.Policy -TargetedUsersToProtect @{add=$User.Users}
+        Set-AntiPhishPolicy -Identity $User.Policy -TargetedUsersToProtect @{add=$User.Users} -ErrorAction Stop
         Write-Host -ForegroundColor Green $user.Users "User is added!"
     }
     Catch {
