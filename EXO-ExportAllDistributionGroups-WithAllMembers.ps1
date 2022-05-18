@@ -15,8 +15,4 @@ New-Object -TypeName PSObject -Property @{
       GroupType = $type
       Members = $members
      }
-} | Export-CSV "C:\temp\JOUWEXPORT2.csv" -NoTypeInformation -Encoding UTF8
-
-
-#bron: https://morgantechspace.com/2015/06/powershell-export-distribution-list-members-to-csv.html
-
+} | Export-CSV "C:\temp\yourexport.csv" -NoTypeInformation -Encoding UTF8
