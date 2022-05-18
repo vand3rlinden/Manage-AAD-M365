@@ -28,6 +28,7 @@ foreach ($Contact in $Contacts){
 
 #############################  Step 4: If the new AddressLists don't contain all the expected recipients
 #bron: https://docs.microsoft.com/en-us/exchange/troubleshoot/administration/new-address-lists-not-contains-all-recipients
+#New address lists aren't automatically updated in Exchange Online. Additionally, the Update-AddressList and Update-GlobalAddressList cmdlets aren't currently available in Exchange Online.
 #Use the same CSV as in step 1
 
 #1: Set temp value on not in used CustomAttribute
