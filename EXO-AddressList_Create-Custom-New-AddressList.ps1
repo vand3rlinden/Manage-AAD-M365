@@ -1,4 +1,6 @@
-#Create a AddressList for some MailContacts, we use CustomAttribute1 to fill up the AddressList
+#Create an AddressList for some MailContacts, we use CustomAttribute1 to fill up the AddressList, but you may use any other free CustomAttribute
+#By default, the Address List role isn't assigned to any role groups in Exchange Online. Add this role to role group: "Organization Management"
+New-ManagementRoleAssignment -SecurityGroup "Organization Management" -Role "Address Lists"
 
 #############################  Step 1: Bulk-Import MailContact
 #CSV Format Example
@@ -13,7 +15,7 @@ foreach ($Contact in $Contacts){
 
 
 #############################  Step 2: Create custom AddressList
-New-AddressList -Name 'NL Franchisers' -RecipientFilter {((RecipientType -eq "MailContact") -and (CustomAttribute1 -eq 'NL Franchisers'))}
+New-AddressList -Name 'Custom AddressList1' -RecipientFilter {((RecipientType -eq "MailContact") -and (CustomAttribute1 -eq 'AddressList1'))}
 
 #############################  Step 3: Set CustomAttribute1
 #Use the same CSV as in step 1
@@ -21,7 +23,7 @@ New-AddressList -Name 'NL Franchisers' -RecipientFilter {((RecipientType -eq "Ma
 $Contacts = Import-Csv -Path "C:\temp\YOURCSV.csv"
  
 foreach ($Contact in $Contacts){
-    Set-MailContact -Identity $Contact.Name -CustomAttribute1 "NL Franchisers"
+    Set-MailContact -Identity $Contact.Name -CustomAttribute1 "AddressList1"
 } 
 
 #############################  Step 4: If the new AddressLists don't contain all the expected recipients
