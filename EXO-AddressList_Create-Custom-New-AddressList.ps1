@@ -20,6 +20,7 @@ New-AddressList -Name 'Custom AddressList1' -RecipientFilter {((RecipientType -e
 #To check the AddressList
 Get-AddressList -Identity 'Custom AddressList1'
 
+
 #############################  Step 3: Set CustomAttribute1
 #Use the same CSV as in step 1
 
@@ -28,6 +29,7 @@ $Contacts = Import-Csv -Path "C:\temp\YOURCSV.csv"
 foreach ($Contact in $Contacts){
     Set-MailContact -Identity $Contact.Name -CustomAttribute1 "AddressList1"
 } 
+
 
 #############################  Step 4: If the new AddressLists don't contain all the expected recipients
 #bron: https://docs.microsoft.com/en-us/exchange/troubleshoot/administration/new-address-lists-not-contains-all-recipients
