@@ -17,6 +17,9 @@ foreach ($Contact in $Contacts){
 #############################  Step 2: Create custom AddressList
 New-AddressList -Name 'Custom AddressList1' -RecipientFilter {((RecipientType -eq "MailContact") -and (CustomAttribute1 -eq 'AddressList1'))}
 
+#To check the AddressList
+Get-AddressList -Identity 'Custom AddressList1'
+
 #############################  Step 3: Set CustomAttribute1
 #Use the same CSV as in step 1
 
