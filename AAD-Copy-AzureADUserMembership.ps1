@@ -11,7 +11,7 @@ $Groups = (Get-AzureADUserMembership -ObjectId $Source).ObjectId
 Foreach($Group in $Groups){
     Try
     {
-        Add-AzureADGroupMember -ObjectId $Group -RefObjectId $Target -ErrorAction Stop
+        Add-AzureADGroupMember -ObjectId $Group -RefObjectId $Target
         Write-Host -ForegroundColor Green "$Group is added!"
     }
     Catch
